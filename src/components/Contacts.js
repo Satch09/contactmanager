@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
+import contacts from './contactInfo';
 
 class Contacts extends Component {
-  state = {
-      contacts: [
-        {
-          id: 1,
-          name: 'John Doe',
-          email: 'jdoe@gmail.com',
-          phone: '111-222-333'
-        },
-        {
-          id: 2,
-          name: 'Jane Doe',
-          email: 'jdoe@gmail.com',
-          phone: '111-222-444'
-        },
-        {
-          id: 3,
-          name: 'John Smith',
-          email: 'jsmith@gmail.com',
-          phone: '444-222-333'
-        },
-      ]
-    }
-
+  state = {contacts}
   render() {
     const {contacts} = this.state;
     return (

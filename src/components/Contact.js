@@ -6,14 +6,13 @@ class Contact extends Component {
   static propTypes = {
     contact: PropTypes.object.isRequired
   };
-
-  onShowClick() {
-    console.log('Hello World');
+  state = {};
+  onShowClick = () => {
+  console.log(this.state);
   }
-
   render() { // You can use this keyword since this it is being used inside of a class which has 'this'
   const {name, phone, email} = this.props.contact;
-    return (
+  return (
       <div className="card card-body mb-3">
       <h4>{name} <i onClick={this.onShowClick} className="fas fa-sort-down"/></h4>
       <ul className="list-group">
