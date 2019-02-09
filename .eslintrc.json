@@ -1,0 +1,47 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": ["error", "always"],
+        "eqeqeq": ["error", "always"],
+        "printWidth": 250,
+        "quotes": ["error", "single"],
+        "jsxBracketSameLine": true,
+        "array-bracket-newline": ["error", "consistent"],
+        "capitalized-comments": ["warn", "always"],
+        "no-var": "off",
+        "no-empty": "off",
+        "flatTernaryExpressions": true,
+        "curly": "error",
+        "no-console": "off",
+        "no-undef": "off",
+        "space-before-function-paren": ["error", "never"],
+        "space-unary-ops": "error",
+        "array-bracket-spacing": ["error", "never"],
+        "bracketSpacing": true,
+        "useTabs": true,
+        "no-multiple-empty-lines": "error",
+        "no-unused-vars": "off",
+        "new-cap": ["error", {
+            "newIsCap": true,
+            "capIsNew": false
+        }],
+        "key-spacing": ["error", {
+            "align": "colon"
+        }],
+        "function-paren-newline": ["error", "multiline"],
+        "indent": ["error", "tab"],
+        "no-new": "error",
+        "react/quotes": "single",
+        "react/jsx-indent-props": [10,10]
+    }
+}
