@@ -1,20 +1,42 @@
 {
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": ["eslint:recommended",
+    "plugin:react/recommended"],
     "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
-        "semi": ["error", "always"],
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-mixed-spaces-and-tabs":["off", "smart-tabs"],
+
         "eqeqeq": ["error", "always"],
         "printWidth": 250,
-        "quotes": ["error", "single"],
         "jsxBracketSameLine": true,
         "array-bracket-newline": ["error", "consistent"],
         "capitalized-comments": ["warn", "always"],
@@ -39,9 +61,7 @@
             "align": "colon"
         }],
         "function-paren-newline": ["error", "multiline"],
-        "indent": ["error", "tab"],
         "no-new": "error",
-        "react/quotes": "single",
-        "react/jsx-indent-props": [10,10]
+        "react/quotes": "single"
     }
 }
