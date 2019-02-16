@@ -20,6 +20,7 @@ const reducer = (state, action) => {
   }
 }
 
+// This will be the global state of the app that everything works off of
 export class Provider extends Component {
 
   state = {

@@ -16,14 +16,12 @@ class Contact extends Component {
   		payload: id
   	});
   }
-
   render() { // You can use this keyword since this it is being used inside of a class which has 'this' and also has a state
   	const {id, name, phone, email} = this.props.contact;
   	const {showContactInfo} = this.state;
   	return (
   		<Consumer>
-  			{value => {
-  				const {dispatch} = value;
+  			{value => { const {dispatch} = value;
   				return(
   					<div className="card card-body mb-3">
   						<h4>{name}{' '}
