@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import axios from 'axois';
+import axios from 'axios';
 
 const Context = React.createContext();
 
@@ -30,9 +30,11 @@ export class Provider extends Component {
   };
 
   componentDidMount() {
-  	fetch('https://jsonplaceholder.typicode.com/users')
-  	.then(res => res.json())
-  	.then(res => this.setState({contacts: res}));
+  	axios
+  		.get('https://jsonplaceholder.typicode.com/users')
+  	//fetch('https://jsonplaceholder.typicode.com/users')
+  	//.then(res => res.json())
+  		.then(res => this.setState({contacts: res.data}));
   }
   render() {
   	return (
