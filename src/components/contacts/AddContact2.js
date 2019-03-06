@@ -11,7 +11,7 @@ class AddContact extends Component {
   }
 
   onSubmit = e => {
-    e.preventDefault(); // Why?
+    e.preventDefault();
     const contact = {
       name: this.nameInput.current.value,
       email: this.emailInput.current.value,
