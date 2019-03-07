@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 // Test implementation of a controlled component - meaning that the component is controlled by React.
 
 import { Consumer } from '../../context';
-import uuid from 'uuid';
 import TextInputGroup from '../layout/textInputGroup';
+import axios from 'axios';
 
 class AddContact extends Component {
   state = {
@@ -39,16 +39,18 @@ class AddContact extends Component {
   	}
 
   	const newContact = {
-  		id: uuid(),
   		name,
   		email,
   		phone
   	};
 
-  	dispatch({
+  	axios.post('https://jsonplaceholder.typicode.com/users', newContact)
+  		.then(res => dispatch({
   		type: 'ADD_CONTACT',
-  		payload: newContact
-  	});
+  		payload: res.data
+  	}));
+
+
   	// Clean state upon submit
   	this.setState({
   		name: '',
