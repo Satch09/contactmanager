@@ -6,7 +6,8 @@ import { Consumer } from '../../context';
 import TextInputGroup from '../layout/textInputGroup';
 import axios from 'axios';
 
-class AddContact extends Component {
+
+class EditContacts extends Component {
   state = {
   	name: '',
   	email: '',
@@ -14,6 +15,17 @@ class AddContact extends Component {
   	errors: {
   	}
   };
+
+  async componentDidMount() {
+  	const {id} = this.props.match.params;
+  	const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+  	const contact = res.data;
+  	this.setState({
+  		name: contact.name,
+  		email: contact.email,
+  		phone: contact.phone
+  	});
+  }
 
   onChange = e => this.setState({[e.target.name]: e.target.value})
 
@@ -38,15 +50,16 @@ class AddContact extends Component {
   		return;
   	}
 
-  	const newContact = {
+  	const updateContact = {
   		name,
   		email,
   		phone
   	};
 
-  	const res = await axios.post('https://jsonplaceholder.typicode.com/users', newContact);
-  	dispatch({ type: 'ADD_CONTACT', payload: res.data });
+  	const {id} = this.props.match.params;
+  	const res = await axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, updateContact);
 
+  	dispatch({type: 'UPDATE_CONTACT', payload: res.data});
 
   	// Clean state upon submit
   	this.setState({
@@ -56,7 +69,7 @@ class AddContact extends Component {
   		errors: {}
   	});
   	this.props.history.push('/'); // After form has been successfully submitted, the user is returned back to the home page
-  	// This will add '/' to the history of the component
+  	// This will add '/' to the history of the component. The user will be redirected to '/'
   };
 
   render() {
@@ -66,7 +79,7 @@ class AddContact extends Component {
   			{value => { const {dispatch} = value;
   				return(
   					<div className="card mb-3">
-  						<div className="card-header">Add Contact</div>
+  						<div className="card-header">Edit Contact</div>
   						<div className="card-body">
   							<form onSubmit={this.onSubmit.bind(this, dispatch)}>
   								<TextInputGroup
@@ -93,7 +106,7 @@ class AddContact extends Component {
   									onChange={this.onChange}
   									error={errors.phone}
   								/>
-  								<input type="submit" value="Add Contact"
+  								<input type="submit" value="Update Contact"
   									className="btn btn-light btn-block"
   								/>
   							</form>
@@ -106,4 +119,4 @@ class AddContact extends Component {
   }
 }
 
-export default AddContact;
+export default EditContacts;
