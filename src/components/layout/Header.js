@@ -12,7 +12,7 @@ const Header = (props) => {
 					<div>
 						<ul className="navbar-nav mr-auto">
 							<li className="nav-item">
-								<Link to='/' className="nav-link"><i className="fas fa-home"></i> Home </Link> </li>
+								<Link to='/contactmanager' className="nav-link"><i className="fas fa-home"></i> Home </Link> </li>
 							<li className="nav-item">
 								<Link to='/contact/add' className="nav-link"><i className="fas fa-address-book"></i> Add Contact </Link> </li>
 							<li className="nav-item">

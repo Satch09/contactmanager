@@ -55,7 +55,8 @@ class AddContact extends Component {
   		phone: '',
   		errors: {}
   	});
-  	this.props.history.push('/'); // After form has been successfully submitted, the user is returned back to the home page
+		this.props.history.push('/contactmanager');
+		// After form has been successfully submitted, the user is returned back to the home page
   	// This will add '/' to the history of the component
   };
 
