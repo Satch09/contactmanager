@@ -1,4 +1,5 @@
-import { GET_CONTACTS } from '../actions/types';
+import { GET_CONTACTS, DELETE_CONTACT, ADD_CONTACT } from '../actions/types';
+import { bindActionCreators } from 'redux';
 
 const initialState = {
 	contacts: [
@@ -28,6 +29,16 @@ export default function(state = initialState, action) {
 	case GET_CONTACTS:
 		return {
 			...state
+		};
+	case DELETE_CONTACT:
+		return {
+			...state,
+			contacts: state.contacts.filter(contact => contact.id !== action.payload)
+		};
+	case ADD_CONTACT:
+		return {
+			...state,
+			 contacts: [action.payload, ...state.contacts]
 		};
 	default:
 		return state;
