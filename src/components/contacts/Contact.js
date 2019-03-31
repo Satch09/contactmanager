@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {deleteContact} from '../../actions/contactActions';
+import {deleteContact} from '../../actions/Actions';
 
 class Contact extends Component {
   state = {

@@ -1,11 +1,11 @@
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import Combiner from './reducers/Combiner';
 
 const initialState = {};
 const middleWare = [thunk];
 const store = createStore(
-	rootReducer,
+	Combiner,
 	initialState,
 	compose(
 		applyMiddleware(...middleWare),

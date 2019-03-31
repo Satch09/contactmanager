@@ -1,4 +1,4 @@
-import { GET_CONTACTS, GET_CONTACT, UPDATE_CONTACT, DELETE_CONTACT, ADD_CONTACT } from '../actions/types';
+import { GET_CONTACTS, GET_CONTACT, UPDATE_CONTACT, DELETE_CONTACT, ADD_CONTACT } from '../actions/SeparatedActions';
 
 
 const initialState = {

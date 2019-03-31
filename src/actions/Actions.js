@@ -4,7 +4,7 @@ import {
 	UPDATE_CONTACT,
 	DELETE_CONTACT,
 	ADD_CONTACT
-} from './types';
+} from './SeparatedActions';
 import axios from 'axios';
 
 export const getContacts = () => async dispatch => {
